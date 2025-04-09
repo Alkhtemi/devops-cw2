@@ -10,7 +10,7 @@ pipeline {
   stages {
     stage('Clone Repo') {
       steps {
-        git 'https://github.com/YOUR_USERNAME/YOUR_REPO.git'
+        git 'https://github.com/Alkhtemi/devops-cw2.git' 
       }
     }
 
@@ -44,9 +44,9 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        sshagent(credentials: ['your-prod-server-key']) {
+        sshagent(credentials: ['prod-server-key']) {
           sh '''
-            ssh -o StrictHostKeyChecking=no ubuntu@PROD_SERVER_IP << EOF
+            ssh -o StrictHostKeyChecking=no ubuntu@54.196.99.255 << EOF
               kubectl set image deployment/cw2-server cw2-server=$IMAGE_NAME:$IMAGE_TAG --record
             EOF
           '''
