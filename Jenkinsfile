@@ -8,11 +8,11 @@ pipeline {
   }
 
   stages {
-    stage('Clone Repo') {
-      steps {
-        git 'https://github.com/Alkhtemi/devops-cw2.git' 
-      }
-    }
+  stage('Clone Repo') {
+  steps {
+    git branch: 'main', url: 'https://github.com/Alkhtemi/devops-cw2.git'
+  }
+}
 
     stage('Build Docker Image') {
       steps {
