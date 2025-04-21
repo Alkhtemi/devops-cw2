@@ -3,7 +3,7 @@ pipeline {
 
   environment {
     IMAGE_NAME = "o0moh0o/cw2-server"
-    IMAGE_TAG = "1.0 v${BUILD_NUMBER}"
+    IMAGE_TAG = "v${BUILD_NUMBER}"
     DOCKER_CREDENTIALS_ID = "dockerhub-creds"
   }
 
