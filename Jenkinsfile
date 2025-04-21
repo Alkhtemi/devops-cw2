@@ -46,7 +46,7 @@ pipeline {
       steps {
         sshagent(credentials: ['prod-server-key']) {
         sh """
-ssh -o StrictHostKeyChecking=no ubuntu@54.196.99.255 << 'EOF'
+ssh -o StrictHostKeyChecking=no ubuntu@3.86.51.134 << 'EOF'
 kubectl set image deployment/cw2-server cw2-server=$IMAGE_NAME:$IMAGE_TAG --record
 EOF
 """
